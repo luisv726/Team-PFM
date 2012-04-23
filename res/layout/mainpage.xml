@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" android:background="@color/background_color">
 
        <TextView
                 android:id="@+id/mainPageTitlet"
@@ -11,43 +11,51 @@
                 android:text="@string/mainpageTitle"
                 android:textSize="25dp"
                 android:textStyle="bold" 
-                android:layout_margin="15dp" android:layout_gravity="center"/>
+                android:layout_margin="15dp" android:layout_gravity="center" android:textColor="@color/text_color"/>
    
     <Button
         android:id="@+id/mainPageConversions"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
         android:text="@string/mainpageConversion"
-		android:textStyle="bold"
-		android:textSize="25dp"
-android:layout_gravity="center" android:layout_margin="15dp"/>
+		android:layout_width="fill_parent"
+             android:layout_height="40dp"
+             android:layout_margin="20dp" 
+             android:textStyle="bold" 
+             android:textSize="25dp" 
+             android:background="@color/foreground_color" 
+             android:textColor="@color/buttontext_color"/>
     <Button
         android:id="@+id/mainPageCalculations"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
         android:text="@string/mainpageCalculations"
-		android:textStyle="bold"
-		android:textSize="25dp"
-		android:onClick="calculations"
-android:layout_gravity="center" android:layout_margin="15dp"/>
+        android:onClick="calculations"
+		android:layout_width="fill_parent"
+             android:layout_height="40dp"
+             android:layout_margin="20dp" 
+             android:textStyle="bold" 
+             android:textSize="25dp" 
+             android:background="@color/foreground_color" 
+             android:textColor="@color/buttontext_color"/>
 
     <Button
         android:id="@+id/mainPageAddDelete"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dp"
         android:text="@string/mainpageAddDelete"
         android:onClick="adddelete"
-        android:textSize="25dp"
-        android:textStyle="bold" />
+        android:layout_width="fill_parent"
+             android:layout_height="40dp"
+             android:layout_margin="20dp" 
+             android:textStyle="bold" 
+             android:textSize="25dp" 
+             android:background="@color/foreground_color" 
+             android:textColor="@color/buttontext_color"/>
 
     <Button
         android:id="@+id/mainPageDocuments"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dp"
         android:text="@string/mainpageDocuments"
-        android:textSize="25dp"
-        android:textStyle="bold" />
+        android:layout_width="fill_parent"
+             android:layout_height="40dp"
+             android:layout_margin="20dp" 
+             android:textStyle="bold" 
+             android:textSize="25dp" 
+             android:background="@color/foreground_color" 
+             android:textColor="@color/buttontext_color"/>
 
 </LinearLayout>

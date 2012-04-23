@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:stretchColumns="*"
-    >
+    android:background="@color/background_color">
 
     <Button
         android:id="@+id/heading_gs_wca_button"
@@ -12,7 +12,7 @@
         android:textSize="20dp" 
         android:text="@string/heading_gp_wca_string" 
         android:onClick="headingGsWca"
-        android:layout_marginBottom="20dp" android:layout_marginTop="10dp"/>
+        android:layout_marginBottom="20dp" android:layout_marginTop="10dp" android:background="@color/foreground_color" android:textColor="@color/buttontext_color" android:textStyle="bold"/>
     
     <Button
         android:id="@+id/windspeed_winddirection_button"
@@ -20,7 +20,7 @@
         android:layout_height="60dp"
         android:textSize="20dp" 
         android:text="@string/windspeed_winddirection_string" 
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp" android:background="@color/foreground_color" android:textColor="@color/buttontext_color" android:textStyle="bold"/>
     
     <Button
         android:id="@+id/true_airspeed_button"
@@ -28,7 +28,7 @@
         android:layout_height="60dp"
         android:textSize="20dp" 
         android:text="@string/true_airspeed_string" 
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp" android:background="@color/foreground_color" android:textColor="@color/buttontext_color" android:textStyle="bold"/>
     
     <Button
         android:id="@+id/density_altitude_button"
@@ -36,7 +36,7 @@
         android:layout_height="60dp"
         android:textSize="20dp" 
         android:text="@string/density_altitude_string" 
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp" android:background="@color/foreground_color" android:textColor="@color/buttontext_color" android:textStyle="bold"/>
     
     <Button
         android:id="@+id/runway_winds_button"
@@ -44,7 +44,7 @@
         android:layout_height="60dp"
         android:textSize="20dp" 
         android:text="@string/runway_winds_string" 
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp" android:background="@color/foreground_color" android:textColor="@color/buttontext_color" android:textStyle="bold"/>
     
     <Button
         android:id="@+id/distance_course_between_airports_button"
@@ -52,7 +52,7 @@
         android:layout_height="60dp"
         android:textSize="20dp" 
         android:text="@string/distance_course_between_airports_string" 
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp" android:background="@color/foreground_color" android:textColor="@color/buttontext_color" android:textStyle="bold"/>
     
     
 </TableLayout>

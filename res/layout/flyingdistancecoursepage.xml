@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical" >
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" android:background="@color/background_color">
 
 
 
@@ -17,7 +17,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/flyingdistancecourseDepartingAirport"
                 android:textSize="16dp"
-                android:textStyle="bold" />
+                android:textStyle="bold" android:textColor="@color/text_color"/>
 
             <Spinner
                 android:id="@+id/flyingdistancecourseDepartingAirportSpinner"
@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/flyingdistancecourseDestinationAirport"
                 android:textSize="16dp"
-                android:textStyle="bold" />
+                android:textStyle="bold" android:textColor="@color/text_color"/>
 
 
             <Spinner
@@ -44,8 +44,8 @@
                 android:layout_width="200dp"
                 android:layout_height="wrap_content" />
         </TableRow>
+      
       <TableRow
-            android:id="@+id/tableRow2"
             android:layout_width="wrap_content"
             android:layout_height="50dp" >
 
@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/flyingdistancecourseDistanceUnit"
                 android:textSize="16dp"
-                android:textStyle="bold" />
+                android:textStyle="bold" android:textColor="@color/text_color"/>
 
 
             <Spinner
@@ -68,10 +68,15 @@
 
         <Button
             android:id="@+id/flyingdistancecourseCalculate"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_weight="0.87"
-            android:text="@string/flyingdistancecourseCalculate" android:textStyle="bold" android:textSize="20dp" android:layout_gravity="center" android:layout_marginBottom="30dp" android:layout_marginTop="30dp"/>
+            android:text="@string/flyingdistancecourseCalculate" 
+            android:layout_width="fill_parent"
+             android:layout_height="40dp"
+             android:layout_margin="20dp" 
+             android:textStyle="bold" 
+             android:textSize="25dp" 
+             android:background="@color/foreground_color" 
+             android:textColor="@color/buttontext_color"/>
+        
         <TableRow
             android:id="@+id/tableRow6"
             android:layout_width="wrap_content"
@@ -83,12 +88,13 @@
                 android:layout_height="wrap_content"
                 android:text="@string/flyingdistancecourseFlyingDistance"
                 android:textSize="16dp"
-                android:textStyle="bold" />
+                android:textStyle="bold" android:textColor="@color/text_color"/>
 
             <EditText
                 android:id="@+id/flyingdistancecourseFlyingDistanceOutput"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
                 android:text="@string/flyingdistancecourseFlyingDistanceOutput" >
 
                 <requestFocus />
@@ -105,10 +111,11 @@
                 android:layout_height="wrap_content"
                 android:text="@string/flyingdistancecourseCourse"
                 android:textSize="16dp"
-                android:textStyle="bold" />
+                android:textStyle="bold" android:textColor="@color/text_color"/>
 
             <EditText
                 android:id="@+id/flyingdistancecourseCourse"
+                android:inputType="numberDecimal"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:text="@string/flyingdistancecourseCourseOutput" >

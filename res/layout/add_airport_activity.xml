@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:stretchColumns="*"
-    >
+    android:background="@color/background_color">
 
     <TableRow android:layout_marginTop="20dp">
 
@@ -11,8 +11,8 @@
             android:layout_column="1"
             android:layout_gravity="center"
             android:padding="3dip"
-            android:textSize="18dp" 
-            android:text="@string/airport_id_string"/>
+            android:textSize="16dp" 
+            android:text="@string/airport_id_string" android:textColor="@color/text_color" android:textStyle="bold"/>
 
         <EditText
             android:id="@+id/input_airport_ID"
@@ -34,7 +34,7 @@
             android:layout_gravity="center"
             android:padding="3dip"
             android:text="@string/latitude_string"
-            android:textSize="18dp" />
+            android:textSize="16dp" android:textColor="@color/text_color" android:textStyle="bold"/>
 
         <EditText
             android:id="@+id/input_latitude"
@@ -56,7 +56,7 @@
             android:layout_gravity="center"
             android:padding="3dip"
             android:text="@string/longitude_string"
-            android:textSize="18dp" />
+            android:textSize="16dp" android:textColor="@color/text_color" android:textStyle="bold"/>
 
         <EditText
             android:id="@+id/input_longitude"
@@ -72,9 +72,15 @@
 
     <Button
         android:id="@+id/add_airport_button"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20dp" android:text="@string/add_airport_string"/>
+        android:text="@string/add_airport_string" 
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:textSize="25dp" 
+        android:background="@color/foreground_color" 
+        android:textColor="@color/buttontext_color" 
+        android:layout_margin="20dp" 
+        android:layout_gravity="center" 
+        android:textStyle="bold"/>
 
 
 </TableLayout>
