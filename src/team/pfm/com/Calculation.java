@@ -6,7 +6,6 @@ package team.pfm.com;
  */
 
 
-import java.lang.reflect.Array;
 public class Calculation {
 // Calculation methods
 	
@@ -32,11 +31,11 @@ public class Calculation {
 	//Calculates head wind and cross wind given wind speed wind direction and runway direction
 	// returns 4 values as an array that denote speed and direction of winds
 	//0deg is due north, 180deg is due south, 90deg is east, 270deg is due west
-	public static double[] calcRunWinds(double windSpe,int windDir, int runwayDir){
+	public static double[] calcRunWinds(double windSpe,double windDir, double runwayDir){
 		double xwindDir;
 		double hwindDir;
 		double []val = new double[4];
-		int angle = Math.abs(windDir - runwayDir);
+		double angle = Math.abs(windDir - runwayDir);
 		//determines what direction the xwind is coming from
 		if(windDir> runwayDir && windDir<(runwayDir + 180) ){
 			xwindDir = 1;//VALUE 1 DENOTES XWIND COMING FROM THE RIGHT
@@ -61,7 +60,7 @@ public class Calculation {
 	
 	 //calculates wind speed given ground speed, true air speed, course and heading
 	//the calculation was configured using a system of equations 
-	public static double calcWindSpe(double groSpe, double trueAir, int course , int heading){
+	public static double calcWindSpe(double groSpe, double trueAir, double course , double heading){
 		double wca = heading - course;
 		double windSpe= Math.sqrt( Math.pow(groSpe, 2) + Math.pow(trueAir,2) -(2*groSpe* trueAir * Math.cos(Math.toRadians(wca))));
 		return windSpe;
@@ -70,9 +69,9 @@ public class Calculation {
 	//calculates wind directions given ground speed, true air speed, course and heading
 	//the calculation was configured using a system of equations 
 	//all data is input as radians
-	public static double calcWindDir(double groSpe, double trueAir, int course , int heading){
+	public static double calcWindDir(double groSpe, double trueAir, double course , double heading){
 		double ws = calcWindSpe(groSpe, trueAir, course, heading);
-		int wca = heading - course;
+		double wca = heading - course;
 		
 		return heading + Math.toDegrees(Math.asin((groSpe/ws) * Math.sin(Math.toRadians(wca)) ));
 		
@@ -80,7 +79,7 @@ public class Calculation {
 	}
 	
 	//calculates the wind correction angle given wind speed, wind direction(from source), airspeed, and course
-	public static double calcCorAng(double windSpe, int windDir, double trueAir, int course){
+	public static double calcCorAng(double windSpe, double windDir, double trueAir, double course){
 		double windDirDownwind = windDir + 180; //getting the downwind direction of the wind
 		if(windDirDownwind>=360){
 			windDirDownwind= windDirDownwind - 360;
@@ -92,7 +91,7 @@ public class Calculation {
 	}
 	
 	//calculates the ground speed given wind speed, wind direction, air speed, and course
-	public static double calcGroSpeed(double windSpe, int windDir,int course, double trueAir){
+	public static double calcGroSpeed(double windSpe, double windDir,double course, double trueAir){
 		double dwdir = windDir + 180;
 		if(dwdir>=360){
 			dwdir= dwdir - 360;
@@ -103,17 +102,17 @@ public class Calculation {
 	}
 	
 	//calculates the heading given wind speed, wind direction, air speed, and course
-	public static double calcHead(double windSpe, int windDir, int course, double trueAir){
+	public static double calcHead(double windSpe, double windDir, double course, double trueAir){
 		double wca = calcCorAng(windSpe, windDir, trueAir, course);
 		return wca + course;
 	}
 	
 	//calculates flying distance between the two airports that are given through ID's
 	//values from database class methods must be in radians as this is what is used here
-	public static double calcFlyDis(String id1, String id2,FPCDatabase db){
+	public static double calcFlyDis(String id1, String id2){
 		double r = 6371; //this is KM which means the distance is returned in KM
-		double cord1[] = db.accsAir(id1);
-		double cord2[]= db.accsAir(id2);
+		double cord1[] = FPCDatabase.accsAir(id1);
+		double cord2[]= FPCDatabase.accsAir(id2);
 		double lat1 = Math.toRadians(cord1[0]);
 		double lat2 = Math.toRadians(cord2[0]);
 		double latD = lat2 -lat1;
@@ -126,9 +125,9 @@ public class Calculation {
 	
 	//calculates initial course between two airports given through airport ID's
 	//values from database class methods must be in radians as this is what is used here
-	public static double calcCourBwAir(String id1, String id2,FPCDatabase db){
-		double cord1[] = db.accsAir(id1);
-		double cord2[]= db.accsAir(id2);
+	public static double calcCourBwAir(String id1, String id2){
+		double cord1[] = FPCDatabase.accsAir(id1);
+		double cord2[]= FPCDatabase.accsAir(id2);
 		double lat1= Math.toRadians(cord1[0]);
 		double lat2 = Math.toRadians(cord2[0]);
 		double longD =Math.toRadians(cord2[1] - cord1[1]); //longD is the difference of longitude 2 - longitude 1

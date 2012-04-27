@@ -3,18 +3,31 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" android:background="@color/background_color">
- <TextView
+
+    <TextView
                 android:id="@+id/deleetpageText"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/deletepageText"
                 android:textSize="16dp"
-                android:textStyle="bold" android:layout_marginTop="20dp" android:textColor="@color/text_color"/>
+                android:textStyle="bold" android:layout_marginTop="20dp" android:textColor="@color/text_color" android:layout_marginBottom="30dp"/>
     
     
     <Spinner
         android:id="@+id/deletepageSpinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:layout_marginTop="50dp"/>
+        android:layout_height="wrap_content" android:layout_marginTop="50dp" android:layout_marginBottom="50dp" android:layout_margin="20dp"/>
 
+    
+    <Button
+            android:id="@+id/delete_button"
+            android:layout_width="fill_parent"
+             android:layout_height="40dp"
+             android:layout_margin="20dp" 
+             android:textStyle="bold" 
+             android:textSize="25dp" 
+             android:background="@color/foreground_color" 
+             android:textColor="@color/buttontext_color"
+            android:text="@string/delete_string"/>
+    
 </LinearLayout>
